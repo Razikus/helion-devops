@@ -11,7 +11,9 @@ pipeline {
 	stages {
 		stage("Test") {
 			steps {
-				shellUtils.touch("x")
+				script{
+					shellUtils.touch("x")
+				}
 			}
 		}
 	}
