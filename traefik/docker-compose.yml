@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  traefik:
+    image: traefik:1.7.12-alpine
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - "$PWD"/traefik.toml:/traefik.toml
+      - "$PWD"/acme.json:/acme.json
+    container_name: traefik
+
+networks:
+  web:
+    external: true
