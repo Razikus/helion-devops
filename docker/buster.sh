@@ -8,4 +8,4 @@
 deb [arch=amd64] https://download.docker.com/linux/debian buster stable
 apt update
 apt -y install docker-ce docker-compose
-usermod -aG docker $USER
+/sbin/usermod -aG docker $USER
